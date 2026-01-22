@@ -11,7 +11,44 @@
       <h1>RPG Character Creator</h1>
       <button class="new-btn">New Character</button>
     </header>
-    <main></main>
+    <main>
+      <!--character cards go here-->
+    </main>
+    <div class="modal">
+      <div class="form-box">
+        <h1 class="char-heading">Create a New Character</h1>
+        <form>
+          <div>
+            <label for="name">Name: </label>
+            <input type="text" id="name" />
+          </div>
+          <div>
+            <label for="class">Class: </label>
+            <select id="class">
+              <option value="warrior">Warrior</option>
+              <option value="archer">Archer</option>
+              <option value="mage">Mage</option>
+              <option value="dwarf">Dwarf</option>
+              <option value="healer">Healer</option>
+            </select>
+          </div>
+          <div>
+            <label for="health">Health:</label>
+            <input id="health" type="number" min="1" max="100" />
+          </div>
+          <div>
+            <label for="attack">Attack:</label>
+            <input id="attack" type="number" min="1" max="100" />
+          </div>
+          <div>
+            <label for="mana">Mana:</label>
+            <input id="mana" type="number" min="1" max="100" />
+          </div>
+          <button id="submit-btn" type="submit">Unleash Character</button>
+          <button id="close-form-btn" type="button">Close Menu</button>
+        </form>
+      </div>
+    </div>
     <script src="script.js" defer></script>
   </body>
 </html>
