@@ -57,3 +57,22 @@ function displayCharactersOnPage() {
     main.appendChild(characterCard);
   });
 }
+
+// Functionality for New Character button
+const newCharBtn = document.querySelector(".new-btn");
+const modal = document.querySelector(".modal");
+const form = document.querySelector("form");
+newCharBtn.addEventListener("click", () => {
+  displayForm();
+});
+
+function displayForm() {
+  form.reset();
+  modal.classList.remove("hidden");
+}
+
+// Functionality for Close Menu button
+const closeBtn = document.querySelector("#close-form-btn");
+closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
