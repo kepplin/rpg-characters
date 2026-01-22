@@ -20,29 +20,29 @@
         <form>
           <div>
             <label for="name">Name: </label>
-            <input type="text" id="name" />
+            <input type="text" id="name" required />
           </div>
           <div>
             <label for="class">Class: </label>
             <select id="class">
-              <option value="warrior">Warrior</option>
-              <option value="archer">Archer</option>
-              <option value="mage">Mage</option>
-              <option value="dwarf">Dwarf</option>
-              <option value="healer">Healer</option>
+              <option value="Warrior">Warrior</option>
+              <option value="Archer">Archer</option>
+              <option value="Mage">Mage</option>
+              <option value="Dwarf">Dwarf</option>
+              <option value="Healer">Healer</option>
             </select>
           </div>
           <div>
             <label for="health">Health:</label>
-            <input id="health" type="number" min="1" max="100" />
+            <input id="health" type="number" min="1" max="100" required />
           </div>
           <div>
             <label for="attack">Attack:</label>
-            <input id="attack" type="number" min="1" max="100" />
+            <input id="attack" type="number" min="1" max="100" required />
           </div>
           <div>
             <label for="mana">Mana:</label>
-            <input id="mana" type="number" min="1" max="100" />
+            <input id="mana" type="number" min="1" max="100" required />
           </div>
           <button id="submit-btn" type="submit">Unleash Character</button>
           <button id="close-form-btn" type="button">Close Menu</button>

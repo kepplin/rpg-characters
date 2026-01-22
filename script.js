@@ -76,3 +76,22 @@ const closeBtn = document.querySelector("#close-form-btn");
 closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
+
+// Functionality for form submission
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const characterData = {
+    name: document.querySelector("#name").value,
+    type: document.querySelector("#class").value,
+    health: document.querySelector("#health").value,
+    attack: document.querySelector("#attack").value,
+    mana: document.querySelector("#mana").value,
+  };
+
+  addCharacterToRoster(characterData);
+  displayCharactersOnPage();
+
+  form.reset();
+  modal.classList.add("hidden");
+});
