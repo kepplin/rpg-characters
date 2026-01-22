@@ -9,9 +9,42 @@
   <body>
     <header>
       <h1>RPG Character Creator</h1>
-      <button>New Character</button>
+      <button class="new-btn">New Character</button>
     </header>
-    <main></main>
+    <main>
+      <!-- delete character card html later-->
+      <div class="character-card">
+        <div class="character-name">
+          <h1>Sahil</h1>
+          <h2 class="warrior">Warrior</h2>
+        </div>
+        <div class="character-stats">
+          <div class="stat-box">
+            <h3>HP:</h3>
+            <h3 class="character-hp">100</h3>
+          </div>
+          <div class="stat-box">
+            <h3>ATK:</h3>
+            <h3 class="character-hp">100</h3>
+          </div>
+          <div class="stat-box">
+            <h3>Mana:</h3>
+            <h3 class="character-hp">100</h3>
+          </div>
+        </div>
+        <div class="character-level-box">
+          <div class="stat-box">
+            <h3>Level:</h3>
+            <h3 class="character-hp">100</h3>
+          </div>
+          <div>
+            <button class="lvl-button lvl-up">+</button>
+            <button class="lvl-button lvl-down">-</button>
+          </div>
+        </div>
+        <button class="delete-button">DELETE</button>
+      </div>
+    </main>
     <script src="script.js" defer></script>
   </body>
 </html>

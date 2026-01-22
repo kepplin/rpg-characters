@@ -1,8 +1,8 @@
 /* font color for character cards: 401F3E, 759AAB*/
-
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -18,18 +18,22 @@ header {
   color: #faf2a1;
   font-family: "Courier New", Courier, monospace;
   height: 100px;
-  width: 100%;
   z-index: 1;
-  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
 }
 
 main {
   background-color: #3f2e56;
   width: 100%;
-  height: 100vh;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  gap: 20px;
+  justify-content: space-evenly;
 }
 
-button {
+.new-btn {
   padding: 20px;
   background-color: #faf2a1;
   color: #978df0;
@@ -41,4 +45,60 @@ button {
 button:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+/* Character Card */
+.character-card {
+  background-color: white;
+  width: 200px;
+  height: 250px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.character-card h2,
+.character-card h1 {
+  text-align: center;
+}
+.character-name {
+  padding-bottom: 30px;
+}
+.character-stats {
+  padding-bottom: 10px;
+}
+.warrior {
+  color: red;
+}
+.archer {
+  color: green;
+}
+.mage {
+  color: blue;
+}
+.dwarf {
+  color: orange;
+}
+.healer {
+  color: pink;
+}
+.character-level-box {
+  display: flex;
+  justify-content: space-between;
+}
+.stat-box {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  justify-content: space-between;
+}
+.lvl-button {
+  width: 25px;
+  height: 25px;
+}
+.delete-button {
+  width: 100%;
+  margin-top: 10px;
+  background-color: maroon;
+  color: #faf2a1;
 }
