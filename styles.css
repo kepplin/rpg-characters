@@ -67,19 +67,19 @@ button:hover {
 .character-stats {
   padding-bottom: 10px;
 }
-.warrior {
+.Warrior {
   color: red;
 }
-.archer {
+.Archer {
   color: green;
 }
-.mage {
+.Mage {
   color: blue;
 }
-.dwarf {
+.Dwarf {
   color: orange;
 }
-.healer {
+.Healer {
   color: pink;
 }
 .character-level-box {
