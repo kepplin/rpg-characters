@@ -11,12 +11,16 @@ body {
 
 header {
   display: flex;
+  position: relative;
   justify-content: space-around;
   align-items: center;
   background-color: #978df0;
   color: #faf2a1;
   font-family: "Courier New", Courier, monospace;
   height: 100px;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.1);
 }
 
 main {
@@ -32,4 +36,9 @@ button {
   font-family: "Courier New", Courier, monospace;
   font-size: larger;
   font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
