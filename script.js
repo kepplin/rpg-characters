@@ -46,11 +46,10 @@ function displayCharactersOnPage() {
     <div class="character-level-box">
         <div class="stat-box">
         <h3>Level:</h3>
-        <h3 class="character-lvl">100</h3>
+        <h3 class="character-lvl">10</h3>
         </div>
         <div>
         <button class="lvl-button lvl-up">+</button>
-        <button class="lvl-button lvl-down">-</button>
         </div>
     </div>
     <button class="delete-button">DELETE</button>`;
@@ -94,4 +93,21 @@ form.addEventListener("submit", function (e) {
 
   form.reset();
   modal.classList.add("hidden");
+});
+
+// Functionality for Deleting Characters
+/* Implemented by first adding an event listener to main, detecting if the click 
+came from a delete button, then working upward to find the card + ID */
+main.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("delete-button")) return;
+
+  // e.target is the delete button thats clicked, with .closest we find the closest
+  // character-card element, then we get the id of that card and use it delete the
+  // corresponding element from the characterRoster array
+  const card = e.target.closest(".character-card");
+  const cardId = card.dataset.id;
+
+  const index = characterRoster.findIndex((char) => char.id === cardId);
+  characterRoster.splice(index, 1);
+  displayCharactersOnPage();
 });
