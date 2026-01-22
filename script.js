@@ -46,7 +46,7 @@ function displayCharactersOnPage() {
     <div class="character-level-box">
         <div class="stat-box">
         <h3>Level:</h3>
-        <h3 class="character-lvl">10</h3>
+        <h3 class="character-lvl">${char.level}</h3>
         </div>
         <div>
         <button class="lvl-button lvl-up">+</button>
@@ -83,9 +83,9 @@ form.addEventListener("submit", function (e) {
   const characterData = {
     name: document.querySelector("#name").value,
     type: document.querySelector("#class").value,
-    health: document.querySelector("#health").value,
-    attack: document.querySelector("#attack").value,
-    mana: document.querySelector("#mana").value,
+    health: Number(document.querySelector("#health").value),
+    attack: Number(document.querySelector("#attack").value),
+    mana: Number(document.querySelector("#mana").value),
   };
 
   addCharacterToRoster(characterData);
@@ -95,19 +95,34 @@ form.addEventListener("submit", function (e) {
   modal.classList.add("hidden");
 });
 
-// Functionality for Deleting Characters
+// Functionality for deleting characters and leveling them up
 /* Implemented by first adding an event listener to main, detecting if the click 
 came from a delete button, then working upward to find the card + ID */
+Character.prototype.levelUp = function () {
+  this.level++;
+};
 main.addEventListener("click", (e) => {
-  if (!e.target.classList.contains("delete-button")) return;
+  if (
+    !e.target.classList.contains("delete-button") &&
+    !e.target.classList.contains("lvl-up")
+  ) {
+    return;
+  }
 
-  // e.target is the delete button thats clicked, with .closest we find the closest
-  // character-card element, then we get the id of that card and use it delete the
-  // corresponding element from the characterRoster array
   const card = e.target.closest(".character-card");
-  const cardId = card.dataset.id;
+  if (!card) return;
 
+  const cardId = card.dataset.id;
   const index = characterRoster.findIndex((char) => char.id === cardId);
-  characterRoster.splice(index, 1);
+  if (index === -1) return;
+
+  if (e.target.classList.contains("delete-button")) {
+    characterRoster.splice(index, 1);
+  }
+
+  if (e.target.classList.contains("lvl-up")) {
+    characterRoster[index].levelUp();
+  }
+
   displayCharactersOnPage();
 });
